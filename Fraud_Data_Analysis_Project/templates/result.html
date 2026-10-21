@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg,#1e3c72,#2a5298);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+        }
+
+        .result-card{
+            width:500px;
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .icon{
+            font-size:70px;
+            margin-bottom:15px;
+        }
+
+        h2{
+            color:#1e3c72;
+            margin-bottom:15px;
+        }
+
+        .prediction{
+            background:#f4f8ff;
+            border-left:5px solid #1e3c72;
+            padding:20px;
+            margin:25px 0;
+            border-radius:10px;
+        }
+
+        .prediction h3{
+            color:#333;
+            font-size:28px;
+        }
+
+        .btn{
+            display:inline-block;
+            text-decoration:none;
+            background:#1e3c72;
+            color:white;
+            padding:12px 25px;
+            border-radius:10px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#2a5298;
+            transform:translateY(-2px);
+        }
+
+        .footer{
+            margin-top:20px;
+            color:gray;
+            font-size:13px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="result-card">
+
+        <div class="icon">🛡️</div>
+
+        <h2>Fraud Detection Result</h2>
+
+        <div class="prediction">
+            <h3>{{ prediction }}</h3>
+        </div>
+
+        <a href="/" class="btn">
+            🔄 Predict Again
+        </a>
+
+        <div class="footer">
+            AI-Powered Fraud Analysis System
+        </div>
+
+    </div>
+
+</body>
+</html>

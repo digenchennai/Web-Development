@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection System</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg,#1e3c72,#2a5298);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+        }
+
+        .container{
+            background:#fff;
+            width:500px;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .title{
+            text-align:center;
+            color:#1e3c72;
+            margin-bottom:25px;
+        }
+
+        .title h2{
+            margin-bottom:5px;
+        }
+
+        .title p{
+            color:gray;
+            font-size:14px;
+        }
+
+        .form-group{
+            margin-bottom:18px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:7px;
+            font-weight:600;
+            color:#333;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:10px;
+            font-size:15px;
+            transition:0.3s;
+        }
+
+        input:focus{
+            border-color:#2a5298;
+            outline:none;
+            box-shadow:0 0 8px rgba(42,82,152,0.4);
+        }
+
+        .btn{
+            width:100%;
+            background:#1e3c72;
+            color:white;
+            border:none;
+            padding:14px;
+            border-radius:10px;
+            cursor:pointer;
+            font-size:16px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#2a5298;
+            transform:translateY(-2px);
+        }
+
+        .footer{
+            text-align:center;
+            margin-top:15px;
+            color:gray;
+            font-size:13px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        <h2>🛡️ Fraud Detection System</h2>
+        <p>Predict whether a transaction is fraudulent</p>
+    </div>
+
+    <form action="/predict" method="POST">
+
+        <div class="form-group">
+            <label>💰 Transaction Amount</label>
+            <input type="number" step="any" name="amount" required>
+        </div>
+
+        <div class="form-group">
+            <label>🕒 Transaction Hour</label>
+            <input type="number" step="any" name="hour" required>
+        </div>
+
+        <div class="form-group">
+            <label>📅 Account Age (Days)</label>
+            <input type="number" step="any" name="account_age_days" required>
+        </div>
+
+        <div class="form-group">
+            <label>📊 Average Amount (30 Days)</label>
+            <input type="number" step="any" name="avg_amount_30d" required>
+        </div>
+
+        <div class="form-group">
+            <label>⚠️ Merchant Risk Score</label>
+            <input type="number" step="any" name="merchant_risk_score" required>
+        </div>
+
+        <button type="submit" class="btn">
+            Predict Fraud
+        </button>
+
+    </form>
+
+    <div class="footer">
+        AI-Powered Fraud Analysis System
+    </div>
+
+</div>
+
+</body>
+</html>
